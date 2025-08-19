@@ -235,7 +235,7 @@ class QuizApp {
         const answerBtns = document.querySelectorAll('.answer-btn');
         answerBtns.forEach((btn, index) => {
             btn.textContent = question.options[index];
-            btn.className = 'answer-btn';
+            btn.className = 'answer-btn'; // すべてのクラスをリセット
             btn.disabled = false;
         });
     }
@@ -261,12 +261,15 @@ class QuizApp {
             }
         });
 
-        this.currentQuestionIndex++;
-        if (this.currentQuestionIndex < this.currentQuestions.length) {
-            this.displayQuestion();
-        } else {
-            this.showResult();
-        }
+        // 正解・不正解を確認する時間を0.6秒与える
+        setTimeout(() => {
+            this.currentQuestionIndex++;
+            if (this.currentQuestionIndex < this.currentQuestions.length) {
+                this.displayQuestion();
+            } else {
+                this.showResult();
+            }
+        }, 600);
     }
 
     showResult() {

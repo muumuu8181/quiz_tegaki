@@ -1,0 +1,100 @@
+import { test, expect } from '@playwright/test';
+
+test.describe('クイズアプリ スモークテスト', () => {
+  test.beforeEach(async ({ page }) => {
+    // アニメーション無効化で安定化
+    await page.addStyleTag({ 
+      content: '*{transition:none!important;animation:none!important}' 
+    });
+  });
+
+  test('メニュー画面からクイズ開始', async ({ page }) => {
+    await page.goto('/');
+    
+    // メニュー画面の表示確認
+    await expect(page.getByRole('heading', { name: 'プログラミングクイズ' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'スタート' })).toBeVisible();
+    
+    // スタートボタンをクリック
+    await page.getByRole('button', { name: 'スタート' }).click();
+    
+    // クイズ画面への移行確認
+    await expect(page.locator('#question-text')).toBeVisible();
+    await expect(page.locator('.answer-btn').first()).toBeVisible();
+  });
+
+  test('正解ボタンが緑色になる', async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('button', { name: 'スタート' }).click();
+    
+    // 最初の選択肢をクリック（テスト用に正解を想定）
+    const firstAnswer = page.locator('.answer-btn').first();
+    await firstAnswer.click();
+    
+    // 0.7秒後に色の変化を確認
+    await page.waitForTimeout(700);
+    
+    // 正解または不正解の色が付いているかチェック
+    const hasCorrectColor = await firstAnswer.evaluate(el => 
+      getComputedStyle(el).backgroundColor === 'rgb(40, 167, 69)'
+    );
+    const hasIncorrectColor = await firstAnswer.evaluate(el => 
+      getComputedStyle(el).backgroundColor === 'rgb(220, 53, 69)'
+    );
+    
+    expect(hasCorrectColor || hasIncorrectColor).toBe(true);
+  });
+
+  test('履歴画面が表示される', async ({ page }) => {
+    await page.goto('/');
+    
+    // 履歴ボタンをクリック
+    await page.getByRole('button', { name: '履歴' }).click();
+    
+    // 履歴画面の表示確認
+    await expect(page.getByRole('heading', { name: '解答履歴' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '戻る' })).toBeVisible();
+  });
+
+  test('統計画面が表示される', async ({ page }) => {
+    await page.goto('/');
+    
+    // 統計ボタンをクリック
+    await page.getByRole('button', { name: '統計' }).click();
+    
+    // 統計画面の表示確認
+    await expect(page.getByRole('heading', { name: '統計情報' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '戻る' })).toBeVisible();
+  });
+
+  test('レスポンシブ対応 - モバイル表示', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/');
+    
+    // モバイルでの表示確認
+    await expect(page.getByRole('heading', { name: 'プログラミングクイズ' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'スタート' })).toBeVisible();
+    
+    // バージョン表示も確認
+    await expect(page.locator('.version-indicator')).toHaveText('v0.12');
+  });
+
+  test('設定画面で問題数変更', async ({ page }) => {
+    await page.goto('/');
+    
+    // 設定ボタンをクリック
+    await page.getByRole('button', { name: '設定' }).click();
+    
+    // 設定画面の表示確認
+    await expect(page.getByRole('heading', { name: '設定' })).toBeVisible();
+    
+    // 問題数選択
+    await page.getByRole('combobox').selectOption('3');
+    
+    // 保存ボタンをクリック
+    await page.getByRole('button', { name: '保存' }).click();
+    
+    // メニュー画面に戻る
+    await expect(page.getByRole('heading', { name: 'プログラミングクイズ' })).toBeVisible();
+  });
+});

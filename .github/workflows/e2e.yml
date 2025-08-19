@@ -1,0 +1,28 @@
+name: e2e
+on: [push, pull_request]
+
+jobs:
+  pw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npx playwright --version
+      - run: npx playwright install --with-deps
+      # （webServer は playwright.config.ts で起動）
+      - run: npx playwright test --list | tee pw-tests-list.txt
+      - run: PW_BASE_URL="http://localhost:3001" npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: pw-report, path: playwright-report }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: pw-results, path: test-results }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: pw-json, path: pw-report.json }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: pw-list, path: pw-tests-list.txt }

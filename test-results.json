@@ -1,0 +1,482 @@
+{
+  "config": {
+    "configFile": "/mnt/c/Users/kakar/work/0819/multi-ai-simple-app-dev/tests/test5_quiz_tegaki/team_01/playwright.config.ts",
+    "rootDir": "/mnt/c/Users/kakar/work/0819/multi-ai-simple-app-dev/tests/test5_quiz_tegaki/team_01/tests/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/mnt/c/Users/kakar/work/0819/multi-ai-simple-app-dev/tests/test5_quiz_tegaki/team_01/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/mnt/c/Users/kakar/work/0819/multi-ai-simple-app-dev/tests/test5_quiz_tegaki/team_01/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/mnt/c/Users/kakar/work/0819/multi-ai-simple-app-dev/tests/test5_quiz_tegaki/team_01/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {},
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "/mnt/c/Users/kakar/work/0819/multi-ai-simple-app-dev/tests/test5_quiz_tegaki/team_01/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/mnt/c/Users/kakar/work/0819/multi-ai-simple-app-dev/tests/test5_quiz_tegaki/team_01/test-results",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {},
+        "id": "tablet",
+        "name": "tablet",
+        "testDir": "/mnt/c/Users/kakar/work/0819/multi-ai-simple-app-dev/tests/test5_quiz_tegaki/team_01/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.2",
+    "workers": 12,
+    "webServer": {
+      "command": "npm run dev:js",
+      "port": 3001,
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "smoke.spec.ts",
+      "file": "smoke.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "クイズアプリ スモークテスト",
+          "file": "smoke.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "メニュー画面からクイズ開始",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-168307509f393981c40a",
+              "file": "smoke.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "正解ボタンが緑色になる",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-481cce997dd0b76d0497",
+              "file": "smoke.spec.ts",
+              "line": 26,
+              "column": 7
+            },
+            {
+              "title": "履歴画面が表示される",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-613da31b0374f92fa4aa",
+              "file": "smoke.spec.ts",
+              "line": 48,
+              "column": 7
+            },
+            {
+              "title": "統計画面が表示される",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-5a9af8e4a296f742f860",
+              "file": "smoke.spec.ts",
+              "line": 59,
+              "column": 7
+            },
+            {
+              "title": "レスポンシブ対応 - モバイル表示",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-f8b3cad78ac6bbd7458f",
+              "file": "smoke.spec.ts",
+              "line": 70,
+              "column": 7
+            },
+            {
+              "title": "設定画面で問題数変更",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-fc2507cb93dd23824013",
+              "file": "smoke.spec.ts",
+              "line": 82,
+              "column": 7
+            },
+            {
+              "title": "メニュー画面からクイズ開始",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-12a21408a325c925f360",
+              "file": "smoke.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "正解ボタンが緑色になる",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-178238082a9ddaf1ae5e",
+              "file": "smoke.spec.ts",
+              "line": 26,
+              "column": 7
+            },
+            {
+              "title": "履歴画面が表示される",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-c7b188e5bf9163658ec5",
+              "file": "smoke.spec.ts",
+              "line": 48,
+              "column": 7
+            },
+            {
+              "title": "統計画面が表示される",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-c1c29e965557657d8785",
+              "file": "smoke.spec.ts",
+              "line": 59,
+              "column": 7
+            },
+            {
+              "title": "レスポンシブ対応 - モバイル表示",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-c01c2b327f0d2a28f770",
+              "file": "smoke.spec.ts",
+              "line": 70,
+              "column": 7
+            },
+            {
+              "title": "設定画面で問題数変更",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-9def0802625a7d450d3f",
+              "file": "smoke.spec.ts",
+              "line": 82,
+              "column": 7
+            },
+            {
+              "title": "メニュー画面からクイズ開始",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-82a5985c0d8efd10c26c",
+              "file": "smoke.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "正解ボタンが緑色になる",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-68f8ef13b333eca7691d",
+              "file": "smoke.spec.ts",
+              "line": 26,
+              "column": 7
+            },
+            {
+              "title": "履歴画面が表示される",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-53f9431aaf7389672fef",
+              "file": "smoke.spec.ts",
+              "line": 48,
+              "column": 7
+            },
+            {
+              "title": "統計画面が表示される",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-2aee737a61c841295fa2",
+              "file": "smoke.spec.ts",
+              "line": 59,
+              "column": 7
+            },
+            {
+              "title": "レスポンシブ対応 - モバイル表示",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-258467a103782d524333",
+              "file": "smoke.spec.ts",
+              "line": 70,
+              "column": 7
+            },
+            {
+              "title": "設定画面で問題数変更",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "tablet",
+                  "projectName": "tablet",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "4219922fea2e2bd3c691-965d1a31bf771337a9e6",
+              "file": "smoke.spec.ts",
+              "line": 82,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-19T07:59:13.257Z",
+    "duration": 33.983000000000175,
+    "expected": 0,
+    "skipped": 18,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

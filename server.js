@@ -4,11 +4,11 @@ const path = require('path');
 const app = express();
 const PORT = 3001;
 
-app.use(express.static('public'));
+app.use(express.static('app/web'));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'app', 'web', 'index.html'));
 });
 
 app.get('/api/questions', (req, res) => {

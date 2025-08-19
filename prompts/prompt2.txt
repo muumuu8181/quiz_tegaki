@@ -1,0 +1,27 @@
+- 〇×は毎回わかりやすく表示されてほしい。緑と赤とか
+- 構成を以下のように切り替えてみてほしい。
+　→必要ならファイルの分割とかも対応して。
+　
+　/ (repo root)
+├─ package.json / tsconfig.base.json / .eslintrc.cjs / .dependency-cruiser.cjs
+├─ config/                     # 環境/ビルド設定
+├─ contracts/                  # 任意: OpenAPI/JSON Schema（型生成の起点）
+├─ core/                       # ドメイン/ユースケース（純粋ロジック）
+│  ├─ domain/ usecases/ types/ index.ts
+├─ app/
+│  ├─ server/                  # HTTP層（Express/Fastify/Edge適用のアダプタ）
+│  ├─ web/                     # クライアント（SPA/MPA/SSR置換可）
+│  │  ├─ index.html
+│  │  └─ src/ (app.tsx, ui/, pages/)
+│  └─ features/                # 垂直スライス（必要になったら増やす）
+├─ shared/                     # 共通（utils, i18n, 型）
+├─ public/                     # 静的資産
+├─ tests/                      # テスト本体のみを置く
+│  ├─ unit/  ├─ integration/  └─ e2e/
+├─ tools/                      # 旧scripts：開発/運用スクリプト置き場
+│  ├─ codegen/   # 例: OpenAPI→型生成
+│  ├─ migrate/   # 例: DBマイグレーション起動
+│  ├─ release/   # 例: changelog/semver
+│  └─ smoke/     # 例: 簡易疎通チェック（テスト“補助”だがtestsから分離）
+├─ db/                         # 任意: スキーマ/マイグレーション（Prisma等）
+└─ infra/                      # 任意: Docker/devcontainer/IaC
