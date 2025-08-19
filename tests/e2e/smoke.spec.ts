@@ -23,7 +23,7 @@ test.describe('クイズアプリ スモークテスト', () => {
     await expect(page.locator('.answer-btn').first()).toBeVisible();
   });
 
-  test('正解ボタンが緑色になる', async ({ page }) => {
+  test('正解・不正解の色表示確認', async ({ page }) => {
     await page.goto('/');
     await page.getByRole('button', { name: 'スタート' }).click();
     
@@ -31,8 +31,11 @@ test.describe('クイズアプリ スモークテスト', () => {
     const firstAnswer = page.locator('.answer-btn').first();
     await firstAnswer.click();
     
-    // 0.7秒後に色の変化を確認
-    await page.waitForTimeout(700);
+    // クラスが追加されるまで待機（より確実）
+    await page.waitForFunction(() => {
+      const btn = document.querySelector('.answer-btn');
+      return btn && (btn.classList.contains('correct') || btn.classList.contains('incorrect') || btn.classList.contains('disabled'));
+    }, { timeout: 2000 });
     
     // 正解または不正解のクラスが付いているかチェック（より確実）
     const hasCorrectClass = await firstAnswer.evaluate(el => 
@@ -85,7 +88,7 @@ test.describe('クイズアプリ スモークテスト', () => {
     await expect(page.getByRole('button', { name: 'スタート' })).toBeVisible();
     
     // バージョン表示も確認
-    await expect(page.locator('.version-indicator')).toHaveText('v0.18');
+    await expect(page.locator('.version-indicator')).toHaveText('v0.19');
   });
 
   test('設定画面で問題数変更', async ({ page }) => {

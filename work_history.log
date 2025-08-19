@@ -17,3 +17,4 @@ Tue Aug 19 16:48:45 JST 2025 team1 v0.15 - action4対応完了：webServer設定
 Tue Aug 19 16:59:24 JST 2025 team1 v0.16 - action5最終チェックリスト完了：push準備完了
 Tue Aug 19 17:13:48 JST 2025 team1 v0.17 - GitHubへpush完了！GitHub Actions実行中 - commit: 75c88e9
     19→Tue Aug 19 17:18:36 JST 2025 team1 GitHub Actions結果確認場所案内完了 - https://github.com/muumuu8181/quiz_tegaki/actions/runs/10455964316
+    20→Tue Aug 19 17:22:04 JST 2025 team1 v0.18 - テスト修正版push完了！正解不正解テスト・バージョン表示修正 - commit: 461f4f3
