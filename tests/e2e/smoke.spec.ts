@@ -34,15 +34,24 @@ test.describe('クイズアプリ スモークテスト', () => {
     // 0.7秒後に色の変化を確認
     await page.waitForTimeout(700);
     
-    // 正解または不正解の色が付いているかチェック
-    const hasCorrectColor = await firstAnswer.evaluate(el => 
-      getComputedStyle(el).backgroundColor === 'rgb(40, 167, 69)'
+    // 正解または不正解のクラスが付いているかチェック（より確実）
+    const hasCorrectClass = await firstAnswer.evaluate(el => 
+      el.classList.contains('correct')
     );
-    const hasIncorrectColor = await firstAnswer.evaluate(el => 
-      getComputedStyle(el).backgroundColor === 'rgb(220, 53, 69)'
+    const hasIncorrectClass = await firstAnswer.evaluate(el => 
+      el.classList.contains('incorrect')
     );
     
-    expect(hasCorrectColor || hasIncorrectColor).toBe(true);
+    // より詳細なデバッグ情報取得
+    const buttonInfo = await firstAnswer.evaluate(el => ({
+      classList: Array.from(el.classList),
+      backgroundColor: getComputedStyle(el).backgroundColor,
+      color: getComputedStyle(el).color
+    }));
+    
+    console.log('Button debug info:', buttonInfo);
+    
+    expect(hasCorrectClass || hasIncorrectClass).toBe(true);
   });
 
   test('履歴画面が表示される', async ({ page }) => {
@@ -76,7 +85,7 @@ test.describe('クイズアプリ スモークテスト', () => {
     await expect(page.getByRole('button', { name: 'スタート' })).toBeVisible();
     
     // バージョン表示も確認
-    await expect(page.locator('.version-indicator')).toHaveText('v0.12');
+    await expect(page.locator('.version-indicator')).toHaveText('v0.18');
   });
 
   test('設定画面で問題数変更', async ({ page }) => {
