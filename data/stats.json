@@ -1,0 +1,32 @@
+{
+  "2": {
+    "attempts": 1,
+    "correct": 0,
+    "lastAnswered": "2025-08-19"
+  },
+  "3": {
+    "attempts": 2,
+    "correct": 0,
+    "lastAnswered": "2025-08-19"
+  },
+  "5": {
+    "attempts": 2,
+    "correct": 1,
+    "lastAnswered": "2025-08-19"
+  },
+  "7": {
+    "attempts": 2,
+    "correct": 0,
+    "lastAnswered": "2025-08-19"
+  },
+  "8": {
+    "attempts": 1,
+    "correct": 0,
+    "lastAnswered": "2025-08-19"
+  },
+  "9": {
+    "attempts": 2,
+    "correct": 0,
+    "lastAnswered": "2025-08-19"
+  }
+}

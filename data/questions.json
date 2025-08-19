@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "question": "JavaScriptで変数を宣言するのに使うキーワードは次のうちどれですか？",
+    "options": ["var", "variable", "declare", "create"],
+    "correct": 0
+  },
+  {
+    "id": 2,
+    "question": "HTMLの文書型宣言は次のうちどれですか？",
+    "options": ["<!DOCTYPE html>", "<html>", "<!doctype>", "<DOCTYPE>"],
+    "correct": 0
+  },
+  {
+    "id": 3,
+    "question": "CSSでテキストの色を赤にする正しい記述は？",
+    "options": ["color: red;", "text-color: red;", "font-color: red;", "background: red;"],
+    "correct": 0
+  },
+  {
+    "id": 4,
+    "question": "Pythonでリストの要素数を取得する関数は？",
+    "options": ["len()", "count()", "size()", "length()"],
+    "correct": 0
+  },
+  {
+    "id": 5,
+    "question": "Gitでファイルをステージングエリアに追加するコマンドは？",
+    "options": ["git add", "git stage", "git commit", "git push"],
+    "correct": 0
+  },
+  {
+    "id": 6,
+    "question": "SQLでテーブルからすべてのデータを取得するキーワードは？",
+    "options": ["SELECT *", "GET ALL", "FETCH *", "SHOW ALL"],
+    "correct": 0
+  },
+  {
+    "id": 7,
+    "question": "HTTPステータスコードで「見つからない」を表すのは？",
+    "options": ["404", "500", "200", "301"],
+    "correct": 0
+  },
+  {
+    "id": 8,
+    "question": "JavaScriptで配列の最後に要素を追加するメソッドは？",
+    "options": ["push()", "add()", "append()", "insert()"],
+    "correct": 0
+  },
+  {
+    "id": 9,
+    "question": "CSSのbox-modelに含まれないものは？",
+    "options": ["opacity", "margin", "padding", "border"],
+    "correct": 0
+  },
+  {
+    "id": 10,
+    "question": "Node.jsでパッケージをインストールするコマンドは？",
+    "options": ["npm install", "node install", "npm get", "node add"],
+    "correct": 0
+  }
+]

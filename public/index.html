@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズアプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- メニュー画面 -->
+        <div id="menu-screen" class="screen active">
+            <div class="menu-content">
+                <h1 class="app-title">プログラミングクイズ</h1>
+                <div class="menu-buttons">
+                    <button id="start-btn" class="menu-btn primary">スタート</button>
+                    <button id="history-btn" class="menu-btn">履歴</button>
+                    <button id="stats-btn" class="menu-btn">統計</button>
+                    <button id="config-btn" class="menu-btn">設定</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 設定画面 -->
+        <div id="config-screen" class="screen">
+            <div class="config-content">
+                <h2>設定</h2>
+                <div class="config-item">
+                    <label for="question-count">1回の問題数:</label>
+                    <select id="question-count">
+                        <option value="3">3問</option>
+                        <option value="5" selected>5問</option>
+                        <option value="10">10問</option>
+                    </select>
+                </div>
+                <div class="config-buttons">
+                    <button id="config-save" class="config-btn primary">保存</button>
+                    <button id="config-back" class="config-btn">戻る</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 履歴画面 -->
+        <div id="history-screen" class="screen">
+            <div class="history-content">
+                <h2>解答履歴</h2>
+                <div id="history-list" class="history-list">
+                    <!-- 履歴がここに表示される -->
+                </div>
+                <div class="history-buttons">
+                    <button id="history-back" class="config-btn">戻る</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 統計画面 -->
+        <div id="stats-screen" class="screen">
+            <div class="stats-content">
+                <h2>統計情報</h2>
+                <div id="stats-list" class="stats-list">
+                    <!-- 統計がここに表示される -->
+                </div>
+                <div class="stats-buttons">
+                    <button id="stats-back" class="config-btn">戻る</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- クイズ画面 -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-content">
+                <div class="quiz-header">
+                    <div class="progress">
+                        <span id="current-question">1</span> / <span id="total-questions">5</span>
+                    </div>
+                    <div class="question-id">
+                        ID: <span id="question-id">1</span>
+                    </div>
+                </div>
+                <div class="question-content">
+                    <h3 id="question-text">問題文がここに表示されます</h3>
+                </div>
+                <div class="answers">
+                    <button class="answer-btn" data-answer="0">選択肢1</button>
+                    <button class="answer-btn" data-answer="1">選択肢2</button>
+                    <button class="answer-btn" data-answer="2">選択肢3</button>
+                    <button class="answer-btn" data-answer="3">選択肢4</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 結果画面 -->
+        <div id="result-screen" class="screen">
+            <div class="result-content">
+                <h2>結果</h2>
+                <div class="score">
+                    <span id="score-text">5問中3問正解</span>
+                </div>
+                <div class="result-buttons">
+                    <button id="retry-btn" class="result-btn primary">もう一度</button>
+                    <button id="menu-btn" class="result-btn">メニューに戻る</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
